@@ -23,6 +23,7 @@ function renderizarTareas (listaTareas, contenedorId){
         contenidoHTML+=tareaHTML
     });
     contenedor.innerHTML = contenidoHTML
+    actualizarResumen()
 }
 function agregarTareas(){
     const tareaInput = document.getElementById("agregar-tarea")
@@ -50,6 +51,13 @@ function cambiarEstadoRealizado(id){
         tarea[0].realizada = !tarea[0].realizada
         renderizarTareas(listaTareas,"tablaBody")
     }
+}
+function actualizarResumen(){
+    const totalTareas = listaTareas.length;
+    const tareasRealizadas = listaTareas.filter (tarea => tarea.realizada).length
+
+    document.getElementById("total-tareas").innerText = totalTareas
+    document.getElementById("tareas-realizadas").innerText = tareasRealizadas
 }
 
 window.onload = () => {
