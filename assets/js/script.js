@@ -14,8 +14,8 @@ function renderizarTareas (listaTareas, contenedorId){
                     <td>${tarea.descripcion}</td>
                     <td>
                         ${tarea.realizada 
-                        ? `<input type='checkbox' id='checkbox-${tarea.id}' checked onchange='cambiarEstadoRealizado(${tarea.id})'>` 
-                        : `<input type='checkbox' id='checkbox-${tarea.id}' onchange='cambiarEstadoRealizado(${tarea.id})'>`}
+                        ? `<input type='checkbox' checked onchange='cambiarEstadoRealizado(${tarea.id})'>` 
+                        : `<input type='checkbox' onchange='cambiarEstadoRealizado(${tarea.id})'>`}
                     </td>
                     <td><button onClick="eliminarTareas(${tarea.id})" class="btn btn-danger">Eliminar</button></td>
                 </tr>
@@ -36,6 +36,7 @@ function agregarTareas(){
         }
         listaTareas.push(nuevaTarea)
         renderizarTareas(listaTareas,"tablaBody")
+        tareaInput.value = "";
     }
 }
 function eliminarTareas(id){
@@ -62,7 +63,6 @@ function actualizarResumen(){
 
 window.onload = () => {
     renderizarTareas(listaTareas,"tablaBody")
-
     const btnAgregar = document.getElementById("btn-agregar")
     btnAgregar.addEventListener("click",agregarTareas)
 }
