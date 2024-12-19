@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.color{
+    background-color: #ececec;
+}
+.contenedorTareas{
+    display: flex;
+    border: 1px black  solid;
+    justify-content: space-between;
+}
+.contadorTareas{
+    margin-top: 20px;
+}
+.tabla{
+    width: 50%;
+    border-collapse: collapse; 
+    margin: 20px auto;
+}
+th, td {
+    padding: 10px; 
+    text-align: center; 
+}
+.resumenTareas{
+    display: flex;
+    width: 80%;
+}
+
